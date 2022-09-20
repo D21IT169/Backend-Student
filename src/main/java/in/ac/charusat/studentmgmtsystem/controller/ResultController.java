@@ -28,12 +28,6 @@ public class ResultController {
     }
 
 
-    @DeleteMapping("/result/{id}")
-    public List<Result> deleteResult(@PathVariable Integer id) {
-        resultRepository.delete(resultRepository.findById(id).get());
-        return resultRepository.findAll();
-    }
-
 
     @PostMapping("/result")
     public List<Result> addResult(@RequestBody Result result) {
