@@ -50,6 +50,15 @@ public class CourseController {
         courseRepository.save(courseObj);
         return courseRepository.findAll();
     }
+    
+       //Delete the course
+    @DeleteMapping("/course/{id}")
+    public List<Course> deleteCourse(@PathVariable Integer id)
+    {
+        courseRepository.delete(courseRepository.findById(id).get());
+        return  courseRepository.findAll();
+    }
+
 
  
    
