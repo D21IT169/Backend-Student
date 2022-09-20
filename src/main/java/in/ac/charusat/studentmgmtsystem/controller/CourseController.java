@@ -35,29 +35,6 @@ public class CourseController {
         return courseRepository.findById(id).get();
     }
 
-    //Add new Course
-    @PostMapping("/course")
-    public List<Course> addCourse(@RequestBody Course course){
-        courseRepository.save(course);
-        return  courseRepository.findAll();
-    }
-
-    //Update the Course information
-    @PutMapping("/course/{id}")
-    public  List<Course> updateCourse(@RequestBody Course course, @PathVariable Integer id){
-        Course courseObj = courseRepository.findById(id).get();
-        courseObj.setTitle(course.getTitle());
-        courseObj.setDescription(course.getDescription());
-        courseRepository.save(courseObj);
-        return courseRepository.findAll();
-    }
-
-    //Delete the course
-    @DeleteMapping("/course/{id}")
-    public List<Course> deleteCourse(@PathVariable Integer id)
-    {
-        courseRepository.delete(courseRepository.findById(id).get());
-        return  courseRepository.findAll();
-    }
+    
 
 }
