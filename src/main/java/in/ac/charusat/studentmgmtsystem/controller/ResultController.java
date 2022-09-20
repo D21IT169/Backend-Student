@@ -27,6 +27,13 @@ public class ResultController {
         return resultRepository.findById(id).get();
     }
 
+    
+    @DeleteMapping("/result/{id}")
+    public List<Result> deleteResult(@PathVariable Integer id) {
+        resultRepository.delete(resultRepository.findById(id).get());
+        return resultRepository.findAll();
+    }
+
 
 
     @PostMapping("/result")
