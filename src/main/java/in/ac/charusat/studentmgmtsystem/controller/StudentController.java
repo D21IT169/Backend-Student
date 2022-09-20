@@ -24,11 +24,7 @@ public class StudentController {
         return studentRepository.findById(id).get();
     }
 
-    @DeleteMapping("/student/{id}")
-    public List<Student> deleteStudent(@PathVariable Integer id) {
-        studentRepository.delete(studentRepository.findById(id).get());
-        return studentRepository.findAll();
-    }
+   
 
     @PostMapping("/student")
     public List<Student> addStudent(@RequestBody Student student) {
