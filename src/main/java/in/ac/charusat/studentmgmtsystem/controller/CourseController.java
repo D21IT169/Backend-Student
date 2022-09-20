@@ -35,6 +35,12 @@ public class CourseController {
         return courseRepository.findById(id).get();
     }
 
-    
+    //Add new Course
+    @PostMapping("/course")
+    public List<Course> addCourse(@RequestBody Course course){
+        courseRepository.save(course);
+        return  courseRepository.findAll();
+    }
 
+   
 }
